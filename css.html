@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="titel">
+            <h1>CSS Tutorial</h1>
+        </div>
+ 
+        <!-- Stycke -->
+      <div class="topic" id="Stycke">
+        <h1>Börja använda CSS </h1>
+    </div>
+    <div class="content">
+
+        <article>
+            <h2>Det finns tre sätt att använda CSS på din websida </h2>
+            
+            <ul class="explain">
+                <li>
+                    <p>Den första är genom att länka till en extern fil. Detta är den rekommenderade metoden. För att tillampa detta, du måste skriva dina CSS stil i en separat textfil och spara den
+                        som en <code>.css</code> fil. Syntaxen för att lägga till stilen i din HTML kod är: <br>  
+                       <code>&lt;link rel="stylesheet" type="text/css" href="style.css">&lt;/p></code> 
+                       <p>Du lägger till<code>&lt;link></code>  taggen i huvudelementet, mellan <code>&lt;head> ... &lt;/head></code>
+                        taggar. De två första attributen <code>rel</code> och <code>typ</code>  berättar för webbläsaren att detta är en CSS
+                        formatmall.Det sista attributet <code>href</code> är där du
+                        ange sökvägen till CSS filen som du vill länka till. </p>
+                </li>
+                <li>
+                    <p>Den andra metoden för att lägga till CSS stil på en webbsida är att bädda in koden direkt
+                        i  HTML filen, mellan <code>&lt;head> ... &lt;/head></code>. genom att skriva CSS stilen mellan
+                        <code>&lt;style> ... &lt;/style></code> </p>
+                        <div class="example-box">
+                            <h4>Exemple</h4>
+                            <pre>
+                                &lt;head>
+                                    &lt;style>
+                                          div {
+                                          color: blue;
+                                          width: 100px;
+                                          height: 200px;
+                                          } 
+                                    &lt;/style>
+                                &lt;/head>
+               
+                        </pre>
+                        </div>
+                </li>
+                <li>
+                    <p>Den tredje metoden för att lägga till CSS stil på en webbsida är att använd inline CSS. Inline CSS anges i starttaggen för
+                        elementet du vill tillämpa det på, med stilattributet. Varje regel slutar
+                        med semikolon (;).  </p>
+                        <div class="example-box">
+                            <h4>Exemple</h4>
+                            <pre>
+                                &lt;div style="color:red; background-color:blue;">Some text&lt;/div>
+               
+                        </pre>
+                        </div>
+                </li>
+            </ul>
+            
+        </article>
+        <article>
+            <h2>Syntax för en CSS regel </h2>
+            <p>selector { property : value; property : value; property : value; } <br>
+              
+            <p>Om du vill utforma innehållet i en <code>&lt;div></code>  tagg skriver du regeln som exempelen nedanför:</p>
+            <div class="example-box">
+                <h4>Exemple</h4>
+                <pre>
+                    div {
+                        background-color: yellow;
+                        font-size: 20px;
+                        }
+            </pre>
+            </div>
+            <p>det första ordet <code>div</code> är selector. Det berättar för webbläsaren att uppsättningen regler inne
+                de lockiga parenteserna <code>{ ... }</code> gäller alla element med taggen <code>&lt;div></code>.
+                Inne i de lockiga parenteserna skriver du alla dina deklarationer. Du börjar med att deklarera
+                egenskapen som du vill ange (background-color i den första deklarationen),
+                följt av ett kolon (:). Därefter anger du det värde du vill ha (yellow i förra
+                exempel). Slutligen avslutar du varje deklaration med ett semikolon (;) </p>
+            </p>
+         </article>
+         <article>
+            <h2>Välja ett element</h2>
+            <p>Det finns flera metoder du kan använda för att implementera reglana på elementet</p>
+            <ul class="explain">
+                <li>
+                    <p> - En av de är tagg namnet som före exempel vi har använt <code>div</code>.</p>
+                </li>
+                <li>
+                    <p>- Genom att lägga till attribute <code>id</code> till taggen och i vår CSS koden kan du sedan välja respektive id genom att lägga till ett <code>#</code> tecken framför
+                        av <code>id</code> namnet. Ett exempel visas nedan:</p>
+                        <div class="example-box">
+                            <h4>Exemple</h4>
+                            Html
+                            <pre>
+                                &lt;div id=”aa1”>
+                                    text1
+                                &lt;/div>
+                                &lt;div id="aa2">
+                                    text2
+                                &lt;/div
+              
+                        </pre>
+                        CSS
+                            <pre>
+                                #aa1{
+                                font-size: 20px;
+                                } 
+                                #aa2{
+                                font-size: 20px;
+                                }
+               
+                        </pre>
+                        </div>
+                </li>
+                <li>
+                    <p>Genom att lägga till attribute <code>class</code> till taggen och i vår CSS koden kan du sedan välja respektive id genom att lägga till ett <code>.</code> tecken framför
+                        av <code>class</code> namnet. Ett exempel visas nedan:</p>
+                        <div class="example-box">
+                            <h4>Exemple</h4>
+                            Html
+                            <pre>
+                                &lt;div class=”class1”>
+                                    text1
+                                &lt;/div>
+                                &lt;div class="”class2”">
+                                    text2
+                                &lt;/div
+              
+                        </pre>
+                        CSS
+                            <pre>
+                                .class1{
+                                font-size: 20px;
+                                } 
+                                .class1{
+                                font-size: 20px;
+                                }
+               
+                        </pre>
+                        </div>
+                </li>
+            </ul>
+              
+          
+         </article>
+         <article>
+             <h2>Okänslighet</h2>
+             <p>För det mesta är CSS väljare och regler skiftlägeskänsliga. Därför kan du
+                antingen skriva små eller stora bokstäver. Båda kommer att fungera lika bra. </p>
+                <div class="example-box">
+                    <h4>Exemple</h4>
+                    
+                    <pre>
+                        div {
+                            Background-color: YELLOW;
+                            }
+      
+                </pre>
+                Eller
+                    <pre>
+                        div {
+                            Background-color: yellow;
+                            }
+       
+                </pre>
+                </div>
+         </article>
+         <article>
+            <h2>Kommentarer </h2>
+            <p>Fvi lägger till kommentarer till vår kod med hjälp av symbolerna <code>/* ... */</code> . </p>
+               <div class="example-box">
+                   <h4>Exemple</h4>
+                   
+                   <pre>
+                    /*
+                    
+                    p {
+                        background-color: svart;
+                        font-size: 20px;
+                        color: white;
+                    }
+                    */
+     
+               </pre>
+            
+               </div>
+        </article>
+        <article>
+            <h2>Positionering</h2>
+            <p>CSS positioneringsegenskapen låter dig placera ett element och ange
+                vilket element ska vara ovanpå vid överlappning.<br><br>
+                Det finns fyra metoder för att placera ett element. </p>
+                <ul class="explain">
+                    <li><h3>Statisk positionering</h3>
+                        <p>Statisk betyder inte mycket, det
+                            betyder bara att elementen är placerade enligt det normala flödet av
+                            sida. Alla HTML element placeras med denna metod som standard. Om du
+                            vill ange att statisk positionering ska användas (till exempel för att åsidosätta en annan
+                            positioneringsregel för samma element), skriver du: <br>
+                            <code>position: statisk;</code> </p>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_position_static" class="w3ex" target="-blank">Exempel</a>
+                    </li>
+                    <li><h3>Relativ positionering </h3>
+                        <p>Statisk betyder inte mycket, det
+                            betyder bara att elementen är placerade enligt det normala flödet av
+                            sida. Alla HTML element placeras med denna metod som standard. Om du
+                            vill ange att statisk positionering ska användas (till exempel för att åsidosätta en annan
+                            positioneringsregel för samma element), skriver du: <br>
+                            <code>position: relative;</code> </p>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_position_relative" class="w3ex" target="-blank">Exempel</a>
+                    </li>
+                    <li><h3>Fast positionering</h3>
+                        <p>Som namnet antyder kommer ett element som är placerat med den fasta metoden alltid att stanna på sin tilldelade plats; den rör sig inte ens när sidan rullas. Fast positionering används vanligtvis för att placera sociala delningsknappar på sidan av en webbsida. För att använda fast positionering skriver du :<br>
+                            <code>position: fixed;</code> </p>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_position_fixed" class="w3ex" target="-blank">Exempel</a>
+                    </li>
+                    <li><h3>Absolut positionering</h3>
+                        <p>När absolut positionering används placeras ett element relativt det första överordnade elementet som har en annan position än statisk. Om inget sådant element hittas placeras det relativt för sidan.
+                            Den stannar alltid på samma plats även om sidan rullas. <br>
+                            <code>position: absolute;</code> </p>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_position_absolute" class="w3ex" target="-blank">Exempel</a>
+                    </li>
+                </ul>
+                
+        </article>
+        <article>
+            <h2>Display och Visibility</h2>
+            <p>CSS har två egenskaper som gör att vi kan ta bort eller dölja
+                ett element. Dessa två egenskaper är Display och Visibility. </p>
+                <ul class="explain">
+                    <li><h3>Display</h3>
+                        <p>Egenskapen CSS display används för att ändra hur ett element visas. Det finns tre vanliga värden: none, inline och block.<br><br>
+                            - Det första värdet ”none” får ett element att försvinna. Sidan visas som om elementet inte finns där.<br><p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_display_none" class="w3ex" target="-blank">Exempel</a></p><br>
+                            - Det andra värdet "inline" gör att ett element visas som ett inline element. <br><p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_display_inline_list" class="w3ex" target="-blank">Exempel</a></p><br>
+                            - Det tredje värdet "block" detta element börjar och slutar med en ny rad och sin höjd och bredd kan ändras. <br><p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_display_block_a" class="w3ex" target="-blank">Exempel</a></p><br>
+                            
+                           
+                    </li>
+                    <li><h3>Visibility</h3>
+                        <p>Skillnaden mellan <code>visibility: hidden</code> och <code>display: none</code>  är att för den förra är elementet dolt men tar fortfarande plats. Att använda visibility egenskapen är precis som att bära en osynlig kappa. Elementet finns kvar, även om du inte kan se det. </p>
+                        <p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_visibility_hidden" class="w3ex" target="-blank">Exempel</a></p>
+                    </li>
+                   
+                </ul>
+                
+        </article>
+        <article>
+            <h2>Background</h2>
+            <p>hur man ändrar bakgrundsegenskaperna för en element. Dessa egenskaper inkluderar att ändra dess bakgrundsfärg och
+                bakgrundsbild. </p>
+                <ul class="explain">
+                    <li><h3>Background Color</h3>
+                        <p>För att deklarera bakgrundsfärgen för ett element använder vi egenskapen bakgrundsfärg. I likhet med hur vi anger gränsfärgen för våra CSS rutor kan vi deklarera bakgrundsfärgen för ett element med en av tre notationer: färg
+                            namn, rgb notation eller hexadecimal notation. <br><br>
+                            Exampel:<br>
+                            <code>background-color: green; <br>
+                                background-color: rgb(0, 255, 0); <br>
+                                background-color: #00FF00;</code> </p>
+                                <br>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_background-color_body" class="w3ex" target="-blank">Exempel</a>
+                    </li>
+                    <li><h3>Background Image</h3>
+                        <p>Om du tycker att det är enkelt att bara använda färg som bakgrund för ett element kan du välja att använda en bild. CSS ger oss stor flexibilitet i hur vi vill att bilden ska visas. <br>
+                            För att använda en bild som bakgrund anger vi URL: en till bilden med hjälp av egenskapen: <br> <code>background-image</code>. 
+                             </p>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_background-image" class="w3ex" target="-blank">Exempel</a>
+                    </li>
+                   
+                </ul>
+                
+        </article>
+        <article>
+            <h2>Text and Font</h2>
+            <h3 style="font-size: 25px; font-style: italic;">Teckensnittsegenskaper </h3>
+            <p>Text och teckensnittsegenskaper i CSS används för att formatera utseendet på ord och text på en webbsida. Teckensnittsegenskapen handlar om hur tecknen ser ut, till exempel om de är "tjocka" eller "tunna", "stora" eller "små" och vilken typsnitt som ska användas.  </p>
+                <ul class="explain">
+                    <li><h3>font-family</h3>
+                        <p>Font-family-egenskapen används för att ställa in typsnitt. <br><br>
+                            Exampel:<br>
+                            <code>font-family: "Times New Roman", Times, serif;</code> </p>
+                                <br>
+                            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-family" class="w3ex" target="-blank">Exempel</a>
+               
+                    </li>
+                    <li><h3>font-size</h3>
+                        <p>Egenskapen font-size anger textens storlek. Teckensnittsstorlek kan ställas in med pixlar (px), em, procent (%) </p>
+                        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-size_px" class="w3ex" target="-blank">Exempel (px)</a>
+                        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-size_em" class="w3ex" target="-blank">Exempel (em)</a>
+                        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-size_percent_em" class="w3ex" target="-blank">Exempel (%)</a>
+                    </li>
+                    <li><h3>font-style</h3>
+                        <p>Egenskapen typsnitt används för att ange kursiv text. De två vanliga värdena är <code>normal</code> och <code>italic</code>. Normal visar text utan kursiv medan kursiv visar text i kursiv. </p>
+                        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-size_px" class="w3ex" target="-blank">Exempel (px)</a>
+                        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-size_em" class="w3ex" target="-blank">Exempel (em)</a>
+                        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_font-size_percent_em" class="w3ex" target="-blank">Exempel (%)</a>
+                    </li>
+                   
+                </ul>
+
+              
+            <h3 style="font-size: 25px; font-style: italic;">Textegenskaper  </h3>
+            <p>I CSS textegenskaper låter dig ange egenskaper som inte är relaterade till textens teckensnitt. Vanliga egenskaper inkluderar textfärg, textjustering, textdekoration, bokstavsavstånd, ordavstånd och radhöjd.  </p>
+                <ul class="explain">
+                    <li><h3>color</h3>
+                        <p>Färgegenskapen anger textens färg. <br><br>
+                            Exampel:<br>
+                            <code>color: blue;</code> </p>
+                                    
+                    </li>
+                    <li><h3>text-alignment</h3>
+                        <p>Egenskapen textjustering gör att vi kan ange om vi vill att texten ska vara centrerad eller justerad till vänster eller höger eller motiverad. De vanliga värdena är vänster, höger, centrera och motivera. <br><br>
+                            Exampel:<br>
+                            <code>text-align: left;</code> </p>
+                       
+                    </li>
+                    <li><h3>text-decoration</h3>
+                        <p>Den här egenskapen används vanligtvis för att ta bort understrykningar från hyperlänkar. Som standard kommer de flesta webbläsare att visa hyperlänkar i blått, med en understrykning.  <br><br>
+                        Exampel:<br>
+                        <code>text-decoration: none;</code> </p>
+                    </li>
+                   
+                </ul>
+                
+        </article>
+         
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style2.css">
+    <title>HTML Tutorial</title>
+</head>
+
+<body>
+    <section>
+        <div class="titel">
+            <h1>HTML Tutorial</h1>
+        </div>
+        <nav>
+          <li><a href="#Stycke">Stycke</a></li>
+          <li><a href="#Titlar">Titlar</a></li>
+          <li><a href="#Länkar">Länkar</a></li>
+          <li><a href="#Tabeller">Tabeller</a></li>
+          <li><a href="#Ordnad">Ordnad lista</a></li>
+          <li><a href="#Oordnad">Oordnad lista</a></li>
+          <li><a href="#Inmatningsfält">Inmatningsfält</a></li>
+          <li><a href="#Knapparna">Knapparna</a></li>
+        </nav>
+        <div>
+            <!-- Stycke -->
+            <div class="topic" id="Stycke">
+                <h1>Stycke</h1>
+            </div>
+            <div class="content">
+
+                <article>
+                    <h2>Stycke koncept</h2>
+                    <p>Stycke är ett område som är avsett att visa texten vi lägger i den på en ny rad. </p>
+                    <br>
+                    <h3>Typer av stycken</h3>
+                    <p>Det finns två typer av stycken som kan läggas till på sidan: </p>
+                    <ul class="explain">
+                        <li>
+                            <p>Dedikerade stycken för att visa text på lämpligt sätt. </p>
+                        </li>
+                        <li>
+                            <p>Dedikerade stycken för att visa texten som den är. </p>
+                        </li>
+                    </ul>
+                    <p>Skillnaden mellan de två typerna är att det stycke som är dedikerat till att visa texten korrekt, texten <br> som placeras i den visas på lämpligt sätt för skärmens storlek så att användaren enkelt kan se all text placerad i den, förutom<br>                        att den tar bort alla tomma utrymmen som du tycker är onödiga .</p>
+                </article>
+                <article>
+                    <h2>Stycken för att visa text på lämpligt sätt </h2>
+                    <p>För att visa vanlig text på sidan lägger vi in ​​texten inuti <span><code>&lt;p> &lt;/p></code>.</span><br>
+                        <b>Information: </b> <code>p</code>Betyder <span>Paragraph</span> vilket betyder paragraf </p>
+                    <p>När text visas med den här taggen tar webbläsaren bort alla tomma utrymmen som den finner onödiga, enligt följande: </p>
+                    <ul class="explain">
+                        <li>
+                            <p>Om det finns mer än ett mellanslag mellan ord, behåller webbläsaren bara ett mellanslag. </p>
+                        </li>
+                        <li>
+                            <p>Om den hittar tomma rader kommer webbläsaren att ta bort dem när innehållet visas på sidan. </p>
+                        </li>
+                        <li>
+                            <p>Om den hittar texten avsiktligt placerad på mer än en rad, kommer den att visa allt innehåll på samma rad och släppa på raden endast vid behov. .</p>
+                        </li>
+                    </ul>
+                    <br>
+                    <p>I följande exempel visar vi två stycken på sidan. <br> När du försöker koden, märka hur de två styckena kommer att visas under varandra på sidan. </p>
+                    <div class="example-box">
+                        <h4>Exemple 1</h4>
+                        <pre>
+            &lt;p>This is a paragraph.&lt;/p>
+            &lt;p>This is another paragraph.&lt;/p>
+                    </pre>
+                    </div>
+
+                    <br><br>
+                    <p>I följande exempel lägger vi medvetet tomma mellanslag mellan ord. <br> När du kör koden, märka hur webbläsaren kommer att ta bort alla mellanslag som den tycker är onödiga och hur den kommer att visa texten vackert. </p>
+                    <div class="example-box">
+                        <h4>Exemple 2</h4>
+                        <pre>
+            &lt;p>   This  paragraph    contains  extra    spaces.&lt;/p>
+                    </pre>
+                    <p>   This  paragraph    contains  extra    spaces.</p>
+                    </div>
+
+                    <br><br>
+                    <p>I följande exempel tänkte vi skriva texten på mer än en rad. <br> När du kör koden, märka hur webbläsaren kommer att visa all text på en rad, ignorera att texten är skriven på mer än en rad .</p>
+                    <div class="example-box">
+                        <h4>Exemple 3</h4>
+                        <pre>
+            &lt;p>Hello guys, my name is Ahmad.
+            I start learning programming at 14.
+            &lt;/p>
+                    </pre>
+                    <p>
+                        Hello guys, my name is Ahmad.
+                             I start learning programming at 14.
+                          
+                                    
+                                </p>
+                    </div>
+                </article>
+                <article>
+                    <h2>Gå ner på en ny rad i ett stycke </h2>
+                    <p>Meddela webbläsaren att du vill gå ner på en ny rad i stycket, du måste sätta <code>&lt;br></code> i slutet av raden. <br>
+                        <b>Information: </b> <code>br</code> Betyder <span>Break</span> Vilket i vårt fall är tänkt att stoppa displayen på samma rad. </p>
+                    <br>
+
+                    <div class="example-box">
+                        <h4>Exemple</h4>
+                        <pre>
+            &lt;p>Here we break the paragraph.&lt;br>This will apear on a new line.&lt;/p>
+                    </pre>
+                    <pre>
+                        <p>Here we break the paragraph.<br>This will apear on a new line.</p>
+                                </pre>
+                    </div>
+
+                </article>
+                <article>
+                    <h2>Visa mer än ett mellanslag mellan ord i ett stycke </h2>
+                    <p>För att berätta för webbläsaren att du vill lägga mer än ett tomt utrymme bakom varandra i texten är lösningen att använda symbolen <span class="html-symbol">&amp;nbsp;</span> Vilket betyder tomt utrymme för webbläsaren. <br> varje
+                        symbol
+                        <span>&amp;nbsp;</span> Du uttrycker det som webbläsaren förstår som ett tomt utrymme som inte bör tas bort .</p>
+                    <br>
+                    <p>I följande exempel har vi lagt till 4 tomma mellanslag i början av texten. </p>
+                    <div class="example-box">
+                        <h4>Exemple</h4>
+                        <pre>
+                            <span>&lt;p></span><span>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>We add 4 white spaces at the beginning.<span class="blue">&lt;/p></span>
+                        </pre>
+                        <pre>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;We add 4 white spaces at the beginning.</p>
+                        </pre>
+                    </div>
+
+                </article>
+                <article>
+                    <h2>Stycken avsedda att visa text som den är </h2>
+                    <p>För att visa texten precis som den visas i koden lägger vi in ​​texten <span><code>&lt;pre> &lt;/pre></code>.</span><br>
+                        <b>Information: </b> <code>pre</code> Betyder <span>Preformatted Text</span> vilket betyder förformaterad text. </p>
+                    <p>I princip är den enda texten som vi visar som den är normalt när vi visar kod på en webbsida eftersom vi vill att den ska se ut som den angavs. </p>
+                    <br>
+                    <p>I följande exempel har vi skrivit en text inuti <code>&lt;pre> &lt;/pre></code> Så det visas som det är i webbläsaren. </p>
+                    <div class="example-box">
+                        <h4>Exemple</h4>
+                        <pre>
+                             &lt;pre>
+                            Name: Ahmad Ahmad
+                            Job:  Programmer
+                            Age:  28
+                             &lt;/pre>
+		                </pre>
+                        <pre>
+                            
+                                Name: Ahmad Ahmad
+                                Job:  Programmer
+                                Age:  28
+                                 
+                       </pre>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+
+
+        <!-- Titlar -->
+
+        <div class="topic" id="Titlar">
+            <h1>Titlar </h1>
+        </div>
+        <div class="content">
+
+            <article>
+                <h2>Konceptet och typer av titlar</h2>
+                <p>Titeln är en text vars storlek skiljer sig från styckestorleken. Den visas på en enda rad för att ge användaren en allmän uppfattning om ämnet på sidan han angav, eller en allmän uppfattning om ämnet av stycket kommer han att läsa. </p>
+                <p>Det finns 6 storlekar på titlar som du kan lägga till per sida från och med <code>&lt;h1></code> som börjar med den som ger dig den största titeln och slutar med <code data-enlighter-language="html">&lt;h6></code> den som ger dig den minsta
+                    titeln. </p>
+                <br>
+                <p>I följande exempel har vi visat alla adresser från största till minsta så att du kan märka storleksskillnaden mellan dem. </p>
+                <div class="example-box">
+                    <h4>Exempel</h4>
+                    <pre>
+            &lt;h1>Heading 1&lt;/h1>
+            &lt;h2>Heading 2&lt;/h2>
+            &lt;h3>Heading 3&lt;/h3>
+            &lt;h4>Heading 4&lt;/h4>
+            &lt;h5>Heading 5&lt;/h5>
+            &lt;h6>Heading 6&lt;/h6>
+                    </pre>
+                    <pre>
+                        <h1 style="font-size:xx-large; color: black;">Heading 1</h1>
+                        <h2 style="font-size:x-large; color: black;">Heading 2</h2>
+                        <h3 style="font-size:large; color: black;">Heading 3</h3>
+                        <h4 style="font-size: small; color: black;">Heading 4</h4>
+                        <h5 style="font-size:x-small; color: black;">Heading 5</h5>
+                        <h6 style="font-size:xx-small; color: black;">Heading 6</h6>
+                                </pre>
+                </div>
+
+            </article>
+
+        </div>
+
+        <!-- Länkar -->
+
+        <div class="topic" id="Länkar">
+            <h1>Länkar</h1>
+        </div>
+        <div class="content">
+
+            <article>
+                <h2>Länk koncept</h2>
+                <p>Länk är en text som anger adressen till en annan sida när du klickar på den, webbläsaren tar dig till den .<br> Länken kan också peka på en fil eller ett program och när du klickar på den frågar webbläsaren dig om du vill ladda ner den
+                    eller inte. </p>
+                <br>
+                <h3>Länkar former</h3>
+                <ul class="explain">
+                    <li>
+                        <p>Länken kan placeras som (Text), (Button) eller (Image) när du klickar på den, du kommer att ledas till en annan sida eller ladda ner en fil.</p>
+                    </li>
+
+                </ul>
+            </article>
+            <article>
+                <h2>Lägg till en länk på sidan </h2>
+                <p>I allmänhet använder vi taggen <code>&lt;a></code> på det här sättet <code>&lt;a href="url">text&lt;/a></code> för att visa en länk på sidan.</p>
+                <ul class="explain">
+                    <li>
+                        <p>På plats <code>text</code> Vi lägger texten som vi vill ska visas på sidan som kan klickas.</p>
+                    </li>
+                    <li>
+                        <p>På plats <code>url</code> Vi placerar länken som vi vill rikta användaren till när du klickar på texten som visas på sidan .</p>
+                    </li>
+                </ul>
+                <br>
+                <p>I följande exempel har vi lagt till en länk i stycket. När du klickar på den, skickas användaren till startsidan för Apples webbplats. </p>
+                <div class="example-box">
+                    <h4>Exempel</h4>
+                    <pre>
+            &lt;p>&lt;a href="https://apple.com">Go to apple.com&lt;/a>&lt;/p>
+                    </pre>
+                    <pre>
+                        <p><a href="https://apple.com">Go to apple.com</a></p>
+                    
+                                </pre>
+                </div>
+
+            </article>
+            <article>
+                <h2>Visa tips när du svävar över länken </h2>
+                <p>Om du vill visa en ledtråd när musen förs över länken kan du lägga till funktionen <code>title</code> i tagg <code>&lt;a></code> och skicka den ledtråd som du vill visa som dess värde. </p>
+                <br>
+                <p>I följande exempel har vi lagt till en ledtråd för länken som visas när musen hålls över den. </p>
+                <div class="example-box">
+                    <h4>Exempel</h4>
+                    <pre>
+            &lt;p>&lt;a href="https://apple.com"title="Go to Apple.com">Apple&lt;/a> www.apple.com &lt;/p>
+                    </pre>
+                    
+                    <pre>
+                        <p><a href="https://apple.com"title="Go to Apple.com">Apple</a> www.apple.com </p>
+                                </pre>
+                </div>
+
+            </article>
+            <article>
+                <h2>Sätt en länk till ett specifikt mejl</h2>
+                <p>Om du vill lägga till en länk på sidan när du klickar på den öppnas standardprogrammet för e-post på användarens enhet och anger den part som e-posten ska skickas till, sätt ordet  <code>mailto:</code> följt av e-post som du vill att användaren ska få meddelande som egenskapens värde.  <code data-enlighter-language="html ">href</code>.</p>
+                <br>
+                <p>I följande exempel har vi lagt till en länk som vid klickning öppnar e-postprogrammet på användarens enhet och väljer den part som e-posten ska skickas till. </p>
+                <div class="example-box">
+                    <h4>Exempel</h4>
+                    <pre>
+            &lt;p>&lt;a href="mailto:someone@example.com ">Send Email&lt;/a>&lt;/p>
+                    </pre>
+                    <pre>
+                        <p><a href="mailto:someone@example.com ">Send Email</a></p>
+                                </pre>
+                </div>
+              
+            </article>
+            <article>
+                <h2>Länkar till specifika objekt på sidan </h2>
+                <p>Om du vill sätta en länk som leder användaren till ett specifikt objekt på samma sida eller till ett specifikt objekt på en annan sida, kan du ge objektet  <code >id</code> och sedan länken som vi vill rikta användaren till det elementet, vi måste sätta symbolen i slutet av den  <code>#</code> sedan <code >id</code> Element. </p>
+                
+            </article>
+
+
+        </div>
+          <!-- Tabeller -->
+
+          <div class="topic" id="Tabeller">
+            <h1>Tabeller</h1>
+        </div>
+        <div class="content">
+
+            <article>
+                <h2>Tabell koncept </h2>
+                <p>Tabellen låter dig visa information på ett organiserat sätt, uppdelat i kolumner och rader. 
+
+                </article>
+            <article>
+                <h2>Lägg till en tabell på sidan </h2>
+                <p>För att visa en tabell på sidan använder vi följande taggar för att bygga den som vi vill att den ska vara: </p>
+                <ul class="explain">
+                    <li><p><code>&lt;table> &lt;/table></code> Det är huvudtaggen som du måste sätta för att berätta för webbläsaren att du vill visa data i en tabell. </p></li>
+                    <li><p><code>&lt;tr> &lt;/tr></code> Du använder för att lägga till en rad i tabellen. </p></li>
+                    <li><p><code >&lt;th> &lt;/th></code> Du använder den för att lägga till en ruta på raden som representerar en titel, det vill säga texten du lägger i den visas med fet stil och i mitten. </p></li>
+                    <li><p><code>&lt;td> &lt;/td></code>Du använder den för att lägga till en cell i raden som representerar en normal information, vilket betyder att texten du lägger in den visas som en vanlig text. </p></li>
+                </ul>
+                <br>
+                  <div class="example-box">
+                    <h4>Exampel</h4>
+                    <pre>
+            &lt;table>
+              
+                &lt;tr>
+                    &lt;th>ID&lt;/th>
+                    &lt;th>Name&lt;/th>
+                    &lt;th>Mark&lt;/th>
+                &lt;/tr>
+              
+                &lt;tr>
+                    &lt;td>1&lt;/td>
+                    &lt;td>name1&lt;/td>
+                    &lt;td>A&lt;/td>
+                &lt;/tr>
+              
+                &lt;tr>
+                    &lt;td>2&lt;/td>
+                    &lt;td>name2&lt;/td>
+                    &lt;td>C&lt;/td>
+                &lt;/tr>
+               
+                &lt;tr>
+                    &lt;td>3&lt;/td>
+                    &lt;td>name3&lt;/td>
+                    &lt;td>B&lt;/td>
+                &lt;/tr>
+            &lt;/table>
+                    </pre>
+                    <pre>
+                        <table>
+              
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Mark</th>
+                            </tr>
+                          
+                            <tr>
+                                <td>1</td>
+                                <td>name1</td>
+                                <td>A</td>
+                            </tr>
+                          
+                            <tr>
+                                <td>2</td>
+                                <td>name2</td>
+                                <td>C</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>3</td>
+                                <td>name3</td>
+                                <td>B</td>
+                            </tr>
+                        </table>
+                                </pre>
+                </div>
+           
+            </article>
+
+        </div>
+
+            <!-- Listor i ordning form -->
+
+            <div class="topic" id="Ordnad">
+                <h1>Ordnad lista</h1>
+            </div>
+            <div class="content">
+                <article>
+                    <h2>Begreppet ordnade listor</h2>
+                    <p>En ordnad lista:<span> Den är avsedd att visa en grupp objekt med numret på varje objekt som anges i den. <br>
+                        En av de viktigaste funktionerna i dessa listor är att du kan visa numreringen som du vill, till exempel kan du visa vanliga nummer, alfabetiska tecken, romerska siffror osv.. </p>
+                </article>
+                <article>
+                    <h2>Lägg till en ordnad lista på sidan</h2>
+                    <p>I allmänhet använder vi taggen <code>&lt;ol&gt; &lt;/ol&gt;</code> för att berättar för webbläsaren att vi vill visa en ordnad lista på sidan. <br>
+                        Varje element vi vill lägga till i det måste placeras inuti taggen <code>&lt;li&gt; &lt;/li&gt;</code></p>
+                    <p><b>Information: </b> <code>ol</code> betyder <span>Ordered List</span> som står för ordnad lista och <code>li</code>betyder<span>List Item</span> Vilket betyder ett objekt i listan. </p>
+                    <br>
+                    <p>I följande exempel har vi lagt till en ordnad lista med tre objekt i den. </p>
+                    <div class="example-box">
+                        <h4>Exempel</h4>
+                        <pre>&lt;ol&gt;
+                    &lt;li&gt;Apple&lt;/li&gt;
+                    &lt;li&gt;Orange&lt;/li&gt;
+                    &lt;li&gt;Mango&lt;/li&gt;
+                &lt;/ol&gt;
+                        </pre>
+                        <pre><ol>
+                            <li>Apple</li>
+                            <li>Orange</li>
+                            <li>Mango</li>
+                        </ol>
+                                </pre>
+                        </article>
+                <article>
+                    <h2>Typer av numrering </h2>
+                    <p>Om du vill ange vilken typ av nummerering som ska visas i början av varje objekt kan du lägga till egenskapen  <code>type</code> till taggen <code>&lt;ol&gt;</code> och skicka ett av följande tecken till det som ett värde: </p>
+                    <ul class="explain">
+                        <li><p><code>type="A"</code> Visar en alfabetisk nummerering med stora bokstäver före varje objekt. </p></li>
+                        <li><p><code>type="a"</code> Visar en alfabetisk nummerering med små bokstäver före varje objekt. </p></li>
+                        <li><p><code >type="I"</code> Visar romerska siffror med stora bokstäver före varje element. </p></li>
+                        <li><p><code>type="i"</code> Visar romerska siffror med små bokstäver före varje element.</p></li>
+                        <li><p><code>type="1"</code>Visar vanlig numrering före varje element och detta är standardvärdet som ställs in om du inte anger värdet själv.</p></li>
+                    </ul>
+                    <br><br>
+                    <p>I följande exempel ändrade vi numreringstypen till alfanumerisk med stora bokstäver .</p>
+                    <div class="example-box" >
+                        <h4>Exempel</h4>
+                        <pre >
+                         &lt;ol type="A"&gt;
+                         &lt;li&gt;Apple&lt;/li&gt;
+                         &lt;li&gt;Orange&lt;/li&gt;
+                         &lt;li&gt;Mango&lt;/li&gt;
+                         &lt;/ol&gt;
+                        </pre>
+                        <pre >
+                            <ol type="A">
+                                <li>Apple</li>
+                                <li>Orange</li>
+                                <li>Mango</li>
+                                </ol>
+                           </pre>
+                     
+                      </div>
+                   </article>
+                <article>
+                    <h2>Att sätta en lista i en lista </h2>
+                    <p>Du kan visa kapslade listor så att under listan visas en egen lista. </p>
+                    <br>
+                    <p>I följande exempel har vi definierat två listor och varje lista har en annan lista .</p>
+                    <div class="example-box">
+                        <h4>Exempel</h4>
+                        <pre>&lt;ol&gt;
+                    &lt;!-- Det första elementet är en lista med tre element  --&gt;
+                    &lt;li&gt;Front-End
+                        &lt;ol&gt;
+                            &lt;li&gt;HTML&lt;/li&gt;
+                            &lt;li&gt;CSS&lt;/li&gt;
+                            &lt;li&gt;Javascript&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/li&gt;
+                    &lt;!-- Det andra elementet är en lista som innehåller två element  --&gt;
+                    &lt;li&gt;Back-End
+                        &lt;ol&gt;
+                            &lt;li&gt;MySQL&lt;/li&gt;
+                            &lt;li&gt;Asp.net core&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/li&gt;
+                &lt;/ol&gt;
+                </pre>
+                <pre><ol>
+                    <!-- Det första elementet är en lista med tre element  -->
+                    <li>Front-End
+                        <ol>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                        </ol>
+                    </li>
+                    <!-- Det andra elementet är en lista som innehåller två element  -->
+                    <li>Back-End
+                        <ol>
+                            <li>MySQL</li>
+                            <li>Asp.net core</li>
+                        </ol>
+                    </li>
+                </ol>
+                
+                </pre>
+                       </div>
+                    </div>
+                 
+                </article>
+                
+    
+            </div>
+                <!-- Oordnad lista  -->
+                <div class="topic" id="Oordnad">
+                    <h1>Oordnad lista </h1>
+                </div>
+                <div class="content">
+                <article>
+                    <h2>Oordnat listkoncept </h2>
+                    <p>Oordnad lista: Det innebär att visa en uppsättning element utan att bry sig om det ena ska visas före det andra. </p>
+                    <p>I denna typ av lista kan du välja symbolen som kommer att visas i början av varje objekt och här finns tre symboler som du kan visa är en kvadrat, en cirkel eller en disk .</p>
+                </article>
+                <article>
+                    <h2>Lägg till en Oordnad lista på sidan </h2>
+                    <p>I allmänhet använder vi taggen <code>&lt;ul> &lt;/ul></code> för att berättar för webbläsaren att vi vill visa en orörd lista på sidan. <br>
+                        Varje element vi vill lägga till i det måste placeras inuti taggen  <span><code>&lt;li> &lt;/li></code>.</span></p>
+                    <p><b>Information: </b> <code>ul</code> betyder <span>Unordered List </span>som står för oordnad lista och  <code>li</code> betyder <span>List Item</span> Vilket betyder ett objekt i listan. </p>
+                    <br>
+                    <p>I följande exempel har vi lagt till en oordnad lista med tre objekt i den. </p>
+                    <div class="example-box">
+                        <h4>Exampel</h4>
+                        <pre>
+                &lt;ul>
+                    &lt;li>Apple&lt;/li>
+                    &lt;li>Orange&lt;/li>
+                    &lt;li>Mango&lt;/li>
+                &lt;/ul>
+                        </pre>
+                        <pre>
+                            <ul>
+                                <li>Apple</li>
+                                <li>Orange</li>
+                                <li>Mango</li>
+                            </ul>
+                                    </pre>
+                    </div>
+               
+                </article>
+                <article>
+                    <h2>Typer av symboler som kan visas i de första elementen </h2>
+                    <p>För att ange vilken typ av symboler som ska visas före elementen kan du lägga till egenskapen  <code>type</code> för taggen <code>&lt;ul></code> och skicka ett av följande ord till det som ett värde: </p>
+                    <ul class="explain">
+                        <li><p><code>type="square "</code> För att visa en ruta i början av varje element. </p></li>
+                        <li><p><code>type="circle "</code> För att visa en cirkel i början av varje element.</p></li>
+                        <li><p><code>type="disc "</code> Visar en stor prick i början av varje element och detta är standardvärdet som anges om du inte anger värdet själv. </p></li>
+                        <li><p><code>type="none "</code> För att inte visa en ikon i början av varje objekt. </p></li>
+                    </ul>
+                    
+                     </article>
+                   
+            </div>
+                 <!-- Inmatningsfält   -->
+                 <div class="topic" id="Inmatningsfält">
+                    <h1>Inmatningsfält </h1>
+                </div>
+                <div class="content">
+               
+                    <article>
+                        <h2>Lägg till textruta </h2>
+                        <p>För att lägga till en textruta på sidan kan du använda taggen <code>&lt;input></code>.</p>
+                        <p>Du kan lägga till följande egenskaper i den här taggen: </p>
+                        <ul class="explain">
+                            <li><p><code>id</code> Vi lägger till den om vi vill länka den till tagg  <span><code >&lt;label></code>.</span></p></li>
+                            <li><p><code>name</code> Vi lägger till det så att värdet som placeras i det skickas när du klickar på skicka knappen. </p></li>
+                            <li><p><code>type</code> Anger typ eller format som ska visas där taggen finns på sidan. </p></li>
+                            <li><p><code>value</code> För att ge det ett initialvärde.</p></li>
+                            <li><p><code>placeholder</code> Visar en ledtråd i textrutan som visas om den är tom. </p></li>
+                          
+                        </ul>
+                        <br><br>
+                        <h3>Välj typ av textruta </h3>
+                        <p>För den typ av textruta vi definierar av egenskapen  <code>type</code> Följande formulär är de viktigaste: </p>
+                        <ul class="explain">
+                            <li><p><code>&lt;input type="text "></code> För en vanlig textruta är detta standardtypen. </p></li>
+                            <li><p><code>&lt;input type="password "></code> För en anpassad textruta för lösenord. </p></li>
+                            <li><p><code>&lt;input type="number "></code> För en anpassad textruta för att ange siffror. </p></li>
+                            <li><p><code>&lt;input type="email "></code> För en anpassad textruta för att ange ett mejl. </p></li>
+                        </ul>
+                        <p>Som standard om du inte anger taggens form <code>&lt;input></code> Det kommer att anses att du vill visa en vanlig textruta <span><code>&lt;input type="text "></code>.</span></p>
+                        <br>
+                        <p>I följande exempel visar vi en textruta utan att ange dess typ. </p>
+                        <div class="example-box">
+                            <h4>Exampel</h4>
+                            <pre>
+                    &lt;label for="username ">Username&lt;/label>&lt;br>
+                    &lt;input id="username " name="username ">
+                            </pre>
+                            <pre>
+                                <label for="username ">Username</label><br>
+                                <input id="username " name="username ">
+                                        </pre>
+                        </div>
+                        <br><br>
+                        <p>I följande exempel har vi visat en textruta för att ange ett mejl och en textruta för att ange ett lösenord. <br>
+                       
+                        <div class="example-box">
+                            <h4>Exampel</h4>
+                            <pre>
+                    &lt;label for="email">Email&lt;/label>&lt;br>
+                    &lt;input type="email" id="email" name="email">&lt;br>&lt;br>
+                    &lt;label for="password">Password&lt;/label>&lt;br>
+                    &lt;input type="password" id="password" name="password">
+                            </pre>
+                            <pre>
+                                <label for="email">Email</label><br>
+                                <input type="email" id="email" name="email"><br><br>
+                                <label for="password">Password</label><br>
+                                <input type="password" id="password" name="password">
+                                        </pre>
+                        </div>
+                       
+                        <br><br>
+                        <p>I följande exempel har vi visat en textruta för att ange ett nummer. <br>
+                        <div class="example-box">
+                            <h4>Exampel</h4>
+                            <pre>
+                    &lt;label for="age">Your age&lt;/label>&lt;br>
+                    &lt;input type="number" id="age" name="age">
+                             </pre>
+                             <pre>
+                                <label for="age">Your age</label><br>
+                                <input type="number" id="age" name="age">
+                                         </pre>
+                 </div>
+                           
+                </article>
+            
+            </div>
+
+            <!-- Knapparna   -->
+            <div class="topic" id="Knapparna">
+                <h1>Knapparna</h1>
+                
+            </div>
+            <div class="content">
+           
+                <article>
+                    <h2>Knapptyper</h2>
+                    <p>I allmänhet finns det fyra viktiga typer av knappar som kan läggas till i formulär och alla kan läggas till med tagg <span><code>&lt;input></code>.</span></p>
+                    <p>För att ange vilken knapptyp som ska visas måste egenskapen läggas till <code>type</code> och skicka ett av de förbehandlade värdena enligt följande: </p>
+                    <ul class="explain">
+                        <li><p><code>&lt;input type="button"></code>För en vanlig knapp. <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_button" target="_blank">Exampel</a></p> </li> 
+                        <li><p><code>&lt;input type="submit"></code> För en anpassad knapp för att skicka formulärdata.  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_reset" target="_blank">Exampel</a> </p></li>
+                        <li><p><code>&lt;input type="reset"></code> För en anpassad knapp för att återställa data på formuläret. <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_reset" target="_blank">Exampel</a></p></li>
+                        <li><p><code>&lt;input type="file"></code> För en särskild knapp för att få användaren att välja en fil som finns på datorn.  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_file" target="_blank">Exampel</a></p></li>
+                    </ul>
+                    <br><br>
+                   
+                </article>
+                <article>
+                    <h2>Lägg till vanlig knapp </h2>
+                    <p>För en vanlig knapp kan du använda taggen <code>&lt;button type="button">text&lt;/button></code> eller använd taggen <span><code>&lt;input type="button" value="text"></code>.</span><br>
+                        Naturligtvis i båda fallen ordets plats <code>text</code> Du måste skicka texten som du vill ska visas på knappen. </p>
+                    <p>Den största skillnaden mellan dem är att taggen <code>&lt;button></code> En annan tagg kan placeras inuti den, men taggen <code>&lt;input></code> endast text kan placeras inuti den.</p>
+                    
+                </article>
+                       
+        </div>
+                
+                    
+     
+
+    </section>
+</body>
+
+</html>
